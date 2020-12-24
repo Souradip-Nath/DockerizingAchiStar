@@ -1,1 +1,27 @@
-save log files
+Sending build context to Docker daemon  6.144kB
+Step 1/6 : from python:3.8.7-buster
+ ---> f5041c8ae6b1
+Step 2/6 : WORKDIR /home/souradipnathpwc/FinalProject/DockerizingAchiStar/algapp
+ ---> Running in e5e338dc55c2
+Removing intermediate container e5e338dc55c2
+ ---> 3ed1bb9edeea
+Step 3/6 : COPY req.txt .
+ ---> 3caee9f0340a
+Step 4/6 : RUN pip install -r req.txt
+ ---> Running in c2b6c8cf6b4f
+Collecting numpy
+  Downloading numpy-1.19.4-cp38-cp38-manylinux2010_x86_64.whl (14.5 MB)
+Collecting scipy
+  Downloading scipy-1.5.4-cp38-cp38-manylinux1_x86_64.whl (25.8 MB)
+Installing collected packages: numpy, scipy
+Successfully installed numpy-1.19.4 scipy-1.5.4
+Removing intermediate container c2b6c8cf6b4f
+ ---> d97ffbf6a69d
+Step 5/6 : COPY .  /home/souradipnathpwc/FinalProject/DockerizingAchiStar/algapp/
+ ---> f54b7f8274e8
+Step 6/6 : CMD [ "python","lineq.py" ]
+ ---> Running in 68f1a48f0fc5
+Removing intermediate container 68f1a48f0fc5
+ ---> a562072830ee
+Successfully built a562072830ee
+Successfully tagged dockerpylineq:latest
